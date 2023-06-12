@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\EPM.Mouser.Interview.Web.props" />
+</Project>

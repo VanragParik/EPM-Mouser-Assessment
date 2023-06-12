@@ -16,3 +16,28 @@
         - Available stock (this should be orange if < 10 and red < zero)
 
 *@
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Action</th>
+            <th>Name</th>
+            <th>Total Amount in Stock</th>
+            <th>Available Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            int availableStock = product.InStockQuantity - product.ReservedQuantity;
+            string availableStockColor = availableStock < 0 ? "red" : (availableStock < 10 ? "orange" : "");
+
+            <tr>
+                <td><a href='@Url.Action("ProductDetail", "Home", new { id = product.Id })'>View Details</a></td>
+                <td>@product.Name</td>
+                <td>@product.InStockQuantity</td>
+                <td style="color: @availableStockColor">@availableStock</td>
+            </tr>
+        }
+    </tbody>
+</table>

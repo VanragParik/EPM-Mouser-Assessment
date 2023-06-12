@@ -1,0 +1,18 @@
+﻿@model EPM.Mouser.Interview.Models.Product
+
+@{
+    ViewData["Title"] = "Product Detail";
+}
+
+<h1>Product Detail</h1>
+
+<div>
+    <h4>Product ID: @Model.Id</h4>
+    <h4>Name: @Model.Name</h4>
+    <h4>In Stock Quantity: @Model.InStockQuantity</h4>
+    <h4>Reserved Quantity: @Model.ReservedQuantity</h4>
+</div>
+
+<p>
+    <a href="@Url.Action("Index", "Home")">Back to List</a>
+</p>
